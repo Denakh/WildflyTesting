@@ -6,7 +6,6 @@ import org.testng.annotations.BeforeClass;
 public class BaseTest {
 
     protected WebDriver driver;
-    //protected AngularCalculatorPage angularCalculatorPage;
 
     @BeforeClass(alwaysRun = true)
     public void setUp() throws Exception {
@@ -14,7 +13,6 @@ public class BaseTest {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("http://localhost:8080/article/faces/welcome.xhtml");
-        //angularCalculatorPage = new AngularCalculatorPage(driver);
     }
 
     @AfterClass(alwaysRun = true)
