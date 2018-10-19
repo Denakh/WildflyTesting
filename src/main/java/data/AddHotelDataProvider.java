@@ -29,7 +29,7 @@ public class AddHotelDataProvider {
                 {"", "4", "01.01.2001", "UK", "Chester", "Short description", "Long description", "Some notes",
                         "Name: Validation Error: Value is required."},
                 {"Hotel", "4", "01012001", "UK", "Chester", "Short description", "Long description", "Some notes",
-                        "Name: Validation Error: Value is required."},
+                        "Date of Construction: '01012001' could not be understood as a date."},
                 {"Hotel", "4", "", "UK", "Chester", "Short description", "Long description", "Some notes",
                         "Date of Construction: Validation Error: Value is required."},
                 {"Hotel", "4", "01.01.2001", "Select one", "Chester", "Short description", "Long description", "Some notes",

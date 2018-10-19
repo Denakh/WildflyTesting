@@ -1,9 +1,16 @@
 package pages;
 
+import model.Hotel;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class NewHotelPage extends NavigatePage {
 
@@ -28,12 +35,37 @@ public class NewHotelPage extends NavigatePage {
     @FindBy(css = "span[class='ui-message-error-detail']")
     private WebElement messageErrorDetail;
 
+    @FindBys(@FindBy(css = "div[class='ui-rating-star']"))
+    private List<WebElement> ratingStars;
 
+    @FindBy(css = "input[id='add_hotel:dateOfConstruction_input']")
+    private WebElement dateOfConstructionInput;
 
+    @FindBy(css = "label[id='add_hotel:country_label']")
+    private WebElement countryLabel;
+
+    @FindBys(@FindBy(xpath = "//div[@id='add_hotel:country_panel']//li"))
+    private List<WebElement> countryList;
+
+    @FindBy(css = "label[id='add_hotel:city_label']")
+    private WebElement cityLabel;
+
+    @FindBys(@FindBy(xpath = "//div[@id='add_hotel:city_panel']//li"))
+    private List<WebElement> cityList;
+
+    @FindBy(css = "input[id='add_hotel:short_description']")
+    private WebElement addHotelShortDescriptionInput;
+
+    @FindBy(css = "textarea[id='add_hotel:description']")
+    private WebElement addHotelDescriptionInput;
+
+    @FindBy(css = "textarea[id='add_hotel:notes']")
+    private WebElement addHotelNotesInput;
 
     public NewHotelPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
+        driver.navigate().refresh();
     }
 
     public String getNewHotelPageHeaderText() {
@@ -58,6 +90,91 @@ public class NewHotelPage extends NavigatePage {
 
     public String getMessageErrorDetailText() {
         return messageErrorDetail.getText();
+    }
+
+    public NewHotelPage typeNewHotelName(String name) {
+        driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
+        new WebDriverWait(driver, 10).
+                until(ExpectedConditions.visibilityOf(addHotelNameInput));
+        addHotelNameInput.sendKeys(name);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        return this;
+    }
+
+    public NewHotelPage typeNewHotelDateOfConstruction(String dateOfConstruction) {
+        dateOfConstructionInput.sendKeys(dateOfConstruction);
+        return this;
+    }
+
+    public NewHotelPage selectNewHotelRatingStars(String ratingString) {
+        int rating = getIntFromString(ratingString);
+        ratingStars.get(rating - 1).click();
+        return this;
+    }
+
+    public NewHotelPage selectNewHotelCountry(String country) {
+        countryLabel.click();
+        for (WebElement we : countryList) {
+            if (we.getText().equals(country)) {
+                we.click();
+                break;
+            }
+        }
+        return this;
+    }
+
+    public NewHotelPage selectNewHotelCity(String city) {
+        cityLabel.click();
+        for (WebElement we : cityList) {
+            if (we.getText().equals(city)) {
+                we.click();
+                break;
+            }
+        }
+        return this;
+    }
+
+    public NewHotelPage typeNewHotelShortDescription(String shortDescription) {
+        addHotelShortDescriptionInput.sendKeys(shortDescription);
+        return this;
+    }
+
+    public NewHotelPage typeNewHotelDescription(String description) {
+        addHotelDescriptionInput.sendKeys(description);
+        return this;
+    }
+
+    public NewHotelPage typeNewHotelNotes(String notes) {
+        addHotelNotesInput.sendKeys(notes);
+        return this;
+    }
+
+    public NewHotelPage clickSaveHotelButton() {
+        addHotelButtone.click();
+        return this;
+    }
+
+    public NewHotelPage fillAndSendNewHotelData(Hotel hotel) {
+        typeNewHotelName(hotel.getName());
+        typeNewHotelDateOfConstruction(hotel.getDateOfConstruction());
+        selectNewHotelCountry(hotel.getCountry());
+        typeNewHotelShortDescription(hotel.getShortDescription());
+        typeNewHotelDescription(hotel.getDescription());
+        typeNewHotelNotes(hotel.getNotes());
+        selectNewHotelCity(hotel.getCity());
+        selectNewHotelRatingStars(hotel.getGlobalRating());
+        clickSaveHotelButton();
+        return this;
+    }
+
+    private int getIntFromString(String string) {
+        int amount = 0;
+        try {
+            amount = Integer.parseInt(string);
+        } catch (NumberFormatException nfe) {
+            nfe.printStackTrace();
+        }
+        return amount;
     }
 
 }
