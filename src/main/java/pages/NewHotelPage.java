@@ -25,4 +25,12 @@ public class NewHotelPage extends NavigatePage {
         return newHotelPageHeader.getText();
     }
 
+    public String getDataSectionHeaderText() {
+        return uiPanelTitle.getText();
+    }
+
+    public String getSaveButtonText() {
+        return addHotelButtone.getText();
+    }
+
 }
