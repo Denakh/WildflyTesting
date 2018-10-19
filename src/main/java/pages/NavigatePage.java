@@ -24,16 +24,19 @@ public class NavigatePage {
         PageFactory.initElements(driver, this);
     }
 
-    public void moveCursorToArticleMenu() {
+    public NavigatePage moveCursorToArticleMenu() {
         new Actions(driver).moveToElement(articleMenu).build().perform();
+        return this;
     }
 
-    public void moveCursorToNewMenu() {
+    public NavigatePage moveCursorToNewMenu() {
         new Actions(driver).moveToElement(newMenu).build().perform();
+        return this;
     }
 
-    public void clickOnHotelMenu() {
+    public NavigatePage clickOnHotelMenu() {
         hotelMenu.click();
+        return this;
     }
 
 }
