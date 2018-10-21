@@ -29,9 +29,8 @@ public class HotelListPage extends NavigatePage {
     }
 
     public String getLastAddedHotelName() {
-        return hotelsMainDataList.get((hotelsList.size()-1)*6).getText();
+        return hotelsMainDataList.get((hotelsList.size() - 1) * 6).getText();
     }
-
 
 
 }

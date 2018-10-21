@@ -1,7 +1,7 @@
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class OpeningNewHotelPageTest extends BaseTest {
+public class OpeningNewHotelPageTest extends BaseTestStat {
 
     private String expectedPageHeader = "Register new Hotel";
     private String expectedDataSectionHeader = "Data:";

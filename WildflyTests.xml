@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Wildfly resource testing">
+    <test name="Opening new hotel page test">
+        <classes>
+            <class name="OpeningNewHotelPageTest"/>
+        </classes>
+    </test>
+    <test name="Fields are displayed in data section of register new hotel page test">
+        <classes>
+            <class name="FieldsAreDisplayedInDataSectionOfRegisterNewHotelPageTest"/>
+        </classes>
+    </test>
+    <test name="Required fields is marked with asterisk test">
+        <classes>
+            <class name="RequiredFieldsIsMarkedWithAsteriskTest"/>
+        </classes>
+    </test>
+    <test name="Fields are editable test">
+        <classes>
+            <class name="FieldsAreEditableTest"/>
+        </classes>
+    </test>
+    <test name="Fill new hotel data variants test">
+        <classes>
+            <class name="FillNewHotelDataVariantsTest"/>
+        </classes>
+    </test>
+</suite>

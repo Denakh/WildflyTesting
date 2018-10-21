@@ -1,27 +1,18 @@
 import data.AddHotelDataProvider;
-import data.NamesOfFields;
 import model.Hotel;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import pages.HotelListPage;
-import pages.NewHotelPage;
 
-public class FieldsAreEditableTest extends BaseTest {
+public class FieldsAreEditableTest extends BaseTestStat {
 
     private Hotel hotel;
-    private NewHotelPage newHotelPage;
     private String text = "editable";
 
     @BeforeClass
     @Override
     public void setUpGeneral() throws Exception {
         super.setUpGeneral();
-        navigatePage.moveCursorToArticleMenu().
-                moveCursorToNewMenu().
-                clickOnHotelMenu();
-        newHotelPage = new NewHotelPage(driver);
         hotel = (new Hotel.HotelBuilder()).setName(text).
                 setGlobalRating("3").
                 setDateOfConstruction("000").
@@ -34,11 +25,32 @@ public class FieldsAreEditableTest extends BaseTest {
         newHotelPage.fillNewHotelData(hotel);
     }
 
-    @BeforeMethod
-    @Override
-    public void setUp() throws Exception {
-    }
+    /*
+        @BeforeClass
+        @Override
+        public void setUpGeneral() throws Exception {
+            super.setUpGeneral();
+            navigatePage.moveCursorToArticleMenu().
+                    moveCursorToNewMenu().
+                    clickOnHotelMenu();
+            newHotelPage = new NewHotelPage(driver);
+            hotel = (new Hotel.HotelBuilder()).setName(text).
+                    setGlobalRating("3").
+                    setDateOfConstruction("000").
+                    setCountry(AddHotelDataProvider.testCountry).
+                    setCity(AddHotelDataProvider.testCity).
+                    setShortDescription(text).
+                    setDescription(text).
+                    setNotes(text).
+                    createHotel();
+            newHotelPage.fillNewHotelData(hotel);
+        }
 
+        @BeforeMethod
+        @Override
+        public void setUp() throws Exception {
+        }
+    */
     @Test
     public void testNameFieldIsEditable() {
         String actualAddHotelNameText = newHotelPage.getTypedNameValue();

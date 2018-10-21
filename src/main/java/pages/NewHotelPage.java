@@ -141,7 +141,6 @@ public class NewHotelPage extends NavigatePage {
     }
 
 
-
     public String getAddHotelNameLabelSpanText() {
         return addHotelNameLabelSpan.getText();
     }
@@ -152,10 +151,10 @@ public class NewHotelPage extends NavigatePage {
 
     public NewHotelPage typeNewHotelName(String name) {
         driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
-        new WebDriverWait(driver, 10).
+        new WebDriverWait(driver, 11).
                 until(ExpectedConditions.visibilityOf(addHotelNameInput));
         addHotelNameInput.sendKeys(name);
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(11, TimeUnit.SECONDS);
         return this;
     }
 
@@ -165,6 +164,7 @@ public class NewHotelPage extends NavigatePage {
     }
 
     public NewHotelPage selectNewHotelRatingStars(String ratingString) {
+        waitingByTimeInMS(1000);
         int rating = getIntFromString(ratingString);
         ratingStars.get(rating - 1).click();
         return this;
@@ -266,6 +266,14 @@ public class NewHotelPage extends NavigatePage {
             nfe.printStackTrace();
         }
         return amount;
+    }
+
+    private void waitingByTimeInMS(long waitingTime) {
+        try {
+            Thread.sleep(waitingTime);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
 }

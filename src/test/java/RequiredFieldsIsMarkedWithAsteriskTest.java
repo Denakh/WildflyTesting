@@ -1,26 +1,7 @@
-import data.NamesOfFields;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import pages.NewHotelPage;
 
-public class RequiredFieldsIsMarkedWithAsteriskTest extends BaseTest {
-
-    @BeforeClass
-    @Override
-    public void setUpGeneral() throws Exception {
-        super.setUpGeneral();
-        navigatePage.moveCursorToArticleMenu().
-                moveCursorToNewMenu().
-                clickOnHotelMenu();
-        newHotelPage = new NewHotelPage(driver);
-    }
-
-    @BeforeMethod
-    @Override
-    public void setUp() throws Exception {
-    }
+public class RequiredFieldsIsMarkedWithAsteriskTest extends BaseTestStat {
 
     @Test
     public void testNameFieldMarkedWithAsterisk() {

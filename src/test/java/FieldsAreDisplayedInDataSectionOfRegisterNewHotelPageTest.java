@@ -1,29 +1,25 @@
 import data.NamesOfFields;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import pages.NewHotelPage;
 
-public class FieldsAreDisplayedInDataSectionOfRegisterNewHotelPageTest extends BaseTest {
+public class FieldsAreDisplayedInDataSectionOfRegisterNewHotelPageTest extends BaseTestStat {
 
+    /*
+        @BeforeClass
+        @Override
+        public void setUpGeneral() throws Exception {
+            super.setUpGeneral();
+            navigatePage.moveCursorToArticleMenu().
+                    moveCursorToNewMenu().
+                    clickOnHotelMenu();
+            newHotelPage = new NewHotelPage(driver);
+        }
 
-    @BeforeClass
-    @Override
-    public void setUpGeneral() throws Exception {
-        super.setUpGeneral();
-        navigatePage.moveCursorToArticleMenu().
-                moveCursorToNewMenu().
-                clickOnHotelMenu();
-        newHotelPage = new NewHotelPage(driver);
-    }
-
-    @BeforeMethod
-    @Override
-    public void setUp() throws Exception {
-    }
-
+        @BeforeMethod
+        @Override
+        public void setUp() throws Exception {
+        }
+    */
     @Test
     public void testNameFieldIsDisplayed() {
         String actualAddHotelNameLabelText = newHotelPage.getAddHotelNameLabelText();

@@ -19,7 +19,7 @@ public class FillNewHotelDataVariantsTest extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Description("Test uses data provider")
     public void testNewHotelAddingPositive(String name, String globalRating, String dateOfConstruction, String country,
-            String city, String shortDescription, String description, String notes) {
+                                           String city, String shortDescription, String description, String notes) {
         String expectedResult = "List of all hotels";
         newHotelPage = new NewHotelPage(driver);
         hotelListPage = new HotelListPage(driver);
@@ -59,7 +59,7 @@ public class FillNewHotelDataVariantsTest extends BaseTest {
         String actualErrorMessage = newHotelPage.getMessageErrorDetailText();
         //Log.LOG.debug("comparison of actual result ('" + actualResult + "') and expected ('" + expectedResult + "')");
         Assert.assertTrue(actualErrorMessage.contains(expectedErrorMessage), "There are problems in error message: " +
-        "expected part of error message: '" + expectedErrorMessage + "', actual error message: '" + actualErrorMessage + "'");
+                "expected part of error message: '" + expectedErrorMessage + "', actual error message: '" + actualErrorMessage + "'");
     }
 
 }
