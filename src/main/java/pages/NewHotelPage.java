@@ -38,8 +38,16 @@ public class NewHotelPage extends NavigatePage {
     @FindBys(@FindBy(css = "div[class='ui-rating-star']"))
     private List<WebElement> ratingStars;
 
+    @FindBy(css = "label[for='add_hotel:rate']")
+    private WebElement addHotelRatingLabel;
+
+
     @FindBy(css = "input[id='add_hotel:dateOfConstruction_input']")
     private WebElement dateOfConstructionInput;
+
+    @FindBy(css = "label[for='add_hotel:dateOfConstruction_input']")
+    private WebElement addHotelDateOfConstructionLabel;
+
 
     @FindBy(css = "label[id='add_hotel:country_label']")
     private WebElement countryLabel;
@@ -47,20 +55,40 @@ public class NewHotelPage extends NavigatePage {
     @FindBys(@FindBy(xpath = "//div[@id='add_hotel:country_panel']//li"))
     private List<WebElement> countryList;
 
+    @FindBy(css = "label[for='add_hotel:country_input']")
+    private WebElement addHotelCountryLabel;
+
+
     @FindBy(css = "label[id='add_hotel:city_label']")
     private WebElement cityLabel;
 
     @FindBys(@FindBy(xpath = "//div[@id='add_hotel:city_panel']//li"))
     private List<WebElement> cityList;
 
+    @FindBy(css = "label[for='add_hotel:city_input']")
+    private WebElement addHotelCityLabel;
+
+
     @FindBy(css = "input[id='add_hotel:short_description']")
     private WebElement addHotelShortDescriptionInput;
+
+    @FindBy(css = "label[for='add_hotel:short_description']")
+    private WebElement addHotelShortDescriptionLabel;
+
 
     @FindBy(css = "textarea[id='add_hotel:description']")
     private WebElement addHotelDescriptionInput;
 
+    @FindBy(css = "label[for='add_hotel:description']")
+    private WebElement addHotelDescriptionLabel;
+
+
     @FindBy(css = "textarea[id='add_hotel:notes']")
     private WebElement addHotelNotesInput;
+
+    @FindBy(css = "label[for='add_hotel:notes']")
+    private WebElement addHotelNotesLabel;
+
 
     public NewHotelPage(WebDriver driver) {
         super(driver);
@@ -83,6 +111,36 @@ public class NewHotelPage extends NavigatePage {
     public String getAddHotelNameLabelText() {
         return addHotelNameLabel.getText();
     }
+
+    public String getAddHotelRatingLabelText() {
+        return addHotelRatingLabel.getText();
+    }
+
+    public String getAddHotelDateOfConstructionLabelText() {
+        return addHotelDateOfConstructionLabel.getText();
+    }
+
+    public String getAddHotelCountryLabelText() {
+        return addHotelCountryLabel.getText();
+    }
+
+    public String getAddHotelCityLabelText() {
+        return addHotelCityLabel.getText();
+    }
+
+    public String getAddHotelShortDescriptionLabelText() {
+        return addHotelShortDescriptionLabel.getText();
+    }
+
+    public String getAddHotelDescriptionLabelText() {
+        return addHotelDescriptionLabel.getText();
+    }
+
+    public String getAddHotelNotesLabelText() {
+        return addHotelNotesLabel.getText();
+    }
+
+
 
     public String getAddHotelNameLabelSpanText() {
         return addHotelNameLabelSpan.getText();
@@ -154,7 +212,41 @@ public class NewHotelPage extends NavigatePage {
         return this;
     }
 
+    public String getTypedNameValue() {
+        return addHotelNameInput.getAttribute("value");
+    }
+
+    public String getTypedDateOfConstructionValue() {
+        return dateOfConstructionInput.getAttribute("value");
+    }
+
+    public String getSelectedCountryValue() {
+        return countryLabel.getText();
+    }
+
+    public String getSelectedCityValue() {
+        return cityLabel.getText();
+    }
+
+    public String getTypedShortDescriptionValue() {
+        return addHotelShortDescriptionInput.getAttribute("value");
+    }
+
+    public String getTypedDescriptionValue() {
+        return addHotelDescriptionInput.getAttribute("value");
+    }
+
+    public String getTypedNotesValue() {
+        return addHotelNotesInput.getAttribute("value");
+    }
+
     public NewHotelPage fillAndSendNewHotelData(Hotel hotel) {
+        fillNewHotelData(hotel);
+        clickSaveHotelButton();
+        return this;
+    }
+
+    public NewHotelPage fillNewHotelData(Hotel hotel) {
         typeNewHotelName(hotel.getName());
         typeNewHotelDateOfConstruction(hotel.getDateOfConstruction());
         selectNewHotelCountry(hotel.getCountry());
@@ -163,7 +255,6 @@ public class NewHotelPage extends NavigatePage {
         typeNewHotelNotes(hotel.getNotes());
         selectNewHotelCity(hotel.getCity());
         selectNewHotelRatingStars(hotel.getGlobalRating());
-        clickSaveHotelButton();
         return this;
     }
 

@@ -3,16 +3,9 @@ package data;
 import org.testng.annotations.DataProvider;
 
 public class AddHotelDataProvider {
-    /*
-    private String name;
-    private String globalRating;
-    private String dateOfConstruction;
-    private String country;
-    private String city;
-    private String shortDescription;
-    private String description;
-    private String notes;
-    */
+
+    public static final String testCountry = "UK";
+    public static final String testCity = "Chester";
 
     @DataProvider
     public Object[][] addHotelPositiveTestData() {
