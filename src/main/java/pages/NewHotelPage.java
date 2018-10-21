@@ -101,6 +101,13 @@ public class NewHotelPage extends NavigatePage {
     }
 
     public String getDataSectionHeaderText() {
+        /*
+        driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
+        new WebDriverWait(driver, 11).
+                until(ExpectedConditions.visibilityOf(uiPanelTitle));
+        driver.manage().timeouts().implicitlyWait(11, TimeUnit.SECONDS);
+        */
+        waitingVisibilityOfWebElementByTimeInS(uiPanelTitle, 11);
         return uiPanelTitle.getText();
     }
 
@@ -150,11 +157,14 @@ public class NewHotelPage extends NavigatePage {
     }
 
     public NewHotelPage typeNewHotelName(String name) {
+/*
         driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
         new WebDriverWait(driver, 11).
                 until(ExpectedConditions.visibilityOf(addHotelNameInput));
-        addHotelNameInput.sendKeys(name);
         driver.manage().timeouts().implicitlyWait(11, TimeUnit.SECONDS);
+*/
+        waitingVisibilityOfWebElementByTimeInS(addHotelNameInput, 11);
+        addHotelNameInput.sendKeys(name);
         return this;
     }
 
@@ -164,14 +174,28 @@ public class NewHotelPage extends NavigatePage {
     }
 
     public NewHotelPage selectNewHotelRatingStars(String ratingString) {
-        waitingByTimeInMS(1000);
+        //waitingByTimeInMS(1000);
         int rating = getIntFromString(ratingString);
+/*
+        driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
+        new WebDriverWait(driver, 11).
+                until(ExpectedConditions.visibilityOf(ratingStars.get(rating - 1)));
+        driver.manage().timeouts().implicitlyWait(11, TimeUnit.SECONDS);
+*/
+        waitingVisibilityOfWebElementByTimeInS(ratingStars.get(rating - 1), 11);
         ratingStars.get(rating - 1).click();
         return this;
     }
 
     public NewHotelPage selectNewHotelCountry(String country) {
         countryLabel.click();
+/*
+        driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
+        new WebDriverWait(driver, 11).
+                until(ExpectedConditions.visibilityOf(countryList.get(0)));
+        driver.manage().timeouts().implicitlyWait(11, TimeUnit.SECONDS);
+*/
+        waitingVisibilityOfWebElementByTimeInS(countryList.get(0), 11);
         for (WebElement we : countryList) {
             if (we.getText().equals(country)) {
                 we.click();
@@ -183,6 +207,13 @@ public class NewHotelPage extends NavigatePage {
 
     public NewHotelPage selectNewHotelCity(String city) {
         cityLabel.click();
+/*
+        driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
+        new WebDriverWait(driver, 11).
+                until(ExpectedConditions.visibilityOf(cityList.get(0)));
+        driver.manage().timeouts().implicitlyWait(11, TimeUnit.SECONDS);
+*/
+        waitingVisibilityOfWebElementByTimeInS(cityList.get(0), 11);
         for (WebElement we : cityList) {
             if (we.getText().equals(city)) {
                 we.click();
@@ -268,6 +299,13 @@ public class NewHotelPage extends NavigatePage {
         return amount;
     }
 
+    private void waitingVisibilityOfWebElementByTimeInS(WebElement we, int waitingTime) {
+        driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
+        new WebDriverWait(driver, waitingTime).
+                until(ExpectedConditions.visibilityOf(we));
+        driver.manage().timeouts().implicitlyWait(waitingTime, TimeUnit.SECONDS);
+    }
+/*
     private void waitingByTimeInMS(long waitingTime) {
         try {
             Thread.sleep(waitingTime);
@@ -275,5 +313,5 @@ public class NewHotelPage extends NavigatePage {
             e.printStackTrace();
         }
     }
-
+*/
 }
