@@ -1,5 +1,7 @@
+import data.NamesOfFields;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import utils.Log;
 
 public class OpeningNewHotelPageTest extends BaseTestStat {
 
@@ -10,6 +12,8 @@ public class OpeningNewHotelPageTest extends BaseTestStat {
     @Test
     public void testRegisterNewHotelPageIsDisplayedWhenUserSelectsArticleNewHotel() {
         String actualPageHeader = newHotelPage.getNewHotelPageHeaderText();
+        Log.LOG.debug("Comparison of actual result ('" + actualPageHeader + "') " +
+                "and expected ('" + expectedPageHeader + "')");
         Assert.assertTrue(actualPageHeader.equals(expectedPageHeader),
                 "Error with new hotel page header text");
     }
@@ -17,6 +21,8 @@ public class OpeningNewHotelPageTest extends BaseTestStat {
     @Test
     public void testDataSectionIsDisplayedOnRegisterNewHotel() {
         String actualDataSectionHeader = newHotelPage.getDataSectionHeaderText();
+        Log.LOG.debug("Comparison of actual result ('" + actualDataSectionHeader + "') " +
+                "and expected ('" + expectedDataSectionHeader + "')");
         Assert.assertTrue(actualDataSectionHeader.equals(expectedDataSectionHeader),
                 "Error with data section on register new hotel");
     }
@@ -24,6 +30,8 @@ public class OpeningNewHotelPageTest extends BaseTestStat {
     @Test
     public void testSaveButtonIsDisplayedOnRegisterNewHotel() {
         String actualSaveButtonText = newHotelPage.getSaveButtonText();
+        Log.LOG.debug("Comparison of actual result ('" + actualSaveButtonText + "') " +
+                "and expected ('" + expectedSaveButtonText + "')");
         Assert.assertTrue(actualSaveButtonText.equals(expectedSaveButtonText),
                 "Error with save button on register new hotel");
     }

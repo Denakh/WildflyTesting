@@ -7,6 +7,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HotelListPage;
 import pages.NewHotelPage;
+import utils.Log;
 
 public class FillNewHotelDataVariantsTest extends BaseTest {
 
@@ -34,7 +35,7 @@ public class FillNewHotelDataVariantsTest extends BaseTest {
                 createHotel();
         newHotelPage.fillAndSendNewHotelData(hotel);
         String actualResult = hotelListPage.getHotelListPageHeaderText();
-        //Log.LOG.debug("comparison of actual result ('" + actualResult + "') and expected ('" + expectedResult + "')");
+        Log.LOG.debug("Comparison of actual result ('" + actualResult + "') and expected ('" + expectedResult + "')");
         Assert.assertTrue(actualResult.equals(expectedResult), "Hotel adding hasn't been success");
     }
 
@@ -57,7 +58,7 @@ public class FillNewHotelDataVariantsTest extends BaseTest {
                 createHotel();
         newHotelPage.fillAndSendNewHotelData(hotel);
         String actualErrorMessage = newHotelPage.getMessageErrorDetailText();
-        //Log.LOG.debug("comparison of actual result ('" + actualResult + "') and expected ('" + expectedResult + "')");
+        Log.LOG.debug("Checking that actual result ('" + actualErrorMessage + "') contains ('" + expectedErrorMessage + "')");
         Assert.assertTrue(actualErrorMessage.contains(expectedErrorMessage), "There are problems in error message: " +
                 "expected part of error message: '" + expectedErrorMessage + "', actual error message: '" + actualErrorMessage + "'");
     }

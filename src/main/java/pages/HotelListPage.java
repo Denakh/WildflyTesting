@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
+import utils.Log;
 
 import java.util.List;
 
@@ -27,6 +28,7 @@ public class HotelListPage extends NavigatePage {
 
     @Step("Get hotel list page header text")
     public String getHotelListPageHeaderText() {
+        Log.LOG.debug("Getting hotel list page header text");
         return hotelListPageHeader.getText();
     }
 

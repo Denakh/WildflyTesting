@@ -5,6 +5,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import pages.NavigatePage;
 import pages.NewHotelPage;
+import utils.Log;
 
 import java.util.concurrent.TimeUnit;
 
@@ -16,6 +17,7 @@ public class BaseTest {
 
     @BeforeClass(alwaysRun = true)
     public void setUpGeneral() throws Exception {
+        Log.LOG.debug("Test general set up");
         System.setProperty("webdriver.chrome.driver", "C:\\WebDrivers\\chromedriver_win32\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -26,14 +28,15 @@ public class BaseTest {
 
     @BeforeMethod(alwaysRun = true)
     public void setUp() throws Exception {
+        Log.LOG.debug("Test set up");
         navigatePage.moveCursorToArticleMenu().
                 moveCursorToNewMenu().
                 clickOnHotelMenu();
-        //driver.navigate().refresh();
     }
 
     @AfterClass(alwaysRun = true)
     public void tearDown() throws Exception {
+        Log.LOG.debug("Test tear down");
         driver.close();
     }
 

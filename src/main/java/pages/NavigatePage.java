@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import utils.Log;
 
 public class NavigatePage {
 
@@ -27,18 +28,21 @@ public class NavigatePage {
 
     @Step("Move cursor to article menu")
     public NavigatePage moveCursorToArticleMenu() {
+        Log.LOG.debug("Moving cursor to article menu");
         new Actions(driver).moveToElement(articleMenu).build().perform();
         return this;
     }
 
     @Step("Move cursor to new menu")
     public NavigatePage moveCursorToNewMenu() {
+        Log.LOG.debug("Moving cursor to new menu");
         new Actions(driver).moveToElement(newMenu).build().perform();
         return this;
     }
 
     @Step("Click on hotel menu")
     public NavigatePage clickOnHotelMenu() {
+        Log.LOG.debug("Clicking on hotel menu");
         hotelMenu.click();
         return this;
     }

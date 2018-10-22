@@ -4,6 +4,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import pages.NavigatePage;
 import pages.NewHotelPage;
+import utils.Log;
 
 import java.util.concurrent.TimeUnit;
 
@@ -15,6 +16,7 @@ public class BaseTestStat {
 
     @BeforeClass(alwaysRun = true)
     public void setUpGeneral() throws Exception {
+        Log.LOG.debug("Test general set up");
         System.setProperty("webdriver.chrome.driver", "C:\\WebDrivers\\chromedriver_win32\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -29,6 +31,7 @@ public class BaseTestStat {
 
     @AfterClass(alwaysRun = true)
     public void tearDown() throws Exception {
+        Log.LOG.debug("Test tear down");
         driver.close();
     }
 
