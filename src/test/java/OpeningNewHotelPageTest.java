@@ -5,8 +5,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import utils.Log;
 
-@Epic("Verify that fields are displayed in data section of register new hotel page")
-@Feature("Verifying by fields label text")
+@Epic("Verify that user can open new hotel page")
+@Feature("Verifying by checking of new hotel page main headers texts")
 public class OpeningNewHotelPageTest extends BaseTestStat {
 
     private String expectedPageHeader = "Register new Hotel";

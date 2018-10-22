@@ -5,8 +5,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import utils.Log;
 
-@Epic("Verify that fields are displayed in data section of register new hotel page")
-@Feature("Verifying by fields label text")
+@Epic("Verify that required fields is marked with asterisk")
+@Feature("Verifying by checking that required fields label texts contain asterisk")
 public class RequiredFieldsIsMarkedWithAsteriskTest extends BaseTestStat {
 
     @Test
