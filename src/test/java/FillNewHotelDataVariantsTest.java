@@ -1,7 +1,5 @@
 import data.AddHotelDataProvider;
-import io.qameta.allure.Description;
-import io.qameta.allure.Severity;
-import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.*;
 import model.Hotel;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -9,6 +7,8 @@ import pages.HotelListPage;
 import pages.NewHotelPage;
 import utils.Log;
 
+@Epic("Verify that it is possible to save valid values and not possible to save incorrect values for new hotel fields")
+@Feature("Verifying by probe fields typing and attempting to save new hotel with data variants")
 public class FillNewHotelDataVariantsTest extends BaseTest {
 
     private Hotel hotel;

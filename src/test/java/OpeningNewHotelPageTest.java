@@ -1,8 +1,12 @@
 import data.NamesOfFields;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import utils.Log;
 
+@Epic("Verify that fields are displayed in data section of register new hotel page")
+@Feature("Verifying by fields label text")
 public class OpeningNewHotelPageTest extends BaseTestStat {
 
     private String expectedPageHeader = "Register new Hotel";

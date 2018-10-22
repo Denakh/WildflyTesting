@@ -1,11 +1,15 @@
 import data.AddHotelDataProvider;
 import data.NamesOfFields;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
 import model.Hotel;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import utils.Log;
 
+@Epic("Verify that fields are editable")
+@Feature("Verifying by fields probe typing and getting appropriate field value")
 public class FieldsAreEditableTest extends BaseTestStat {
 
     private Hotel hotel;
