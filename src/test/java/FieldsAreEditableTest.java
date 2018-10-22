@@ -2,6 +2,8 @@ import data.AddHotelDataProvider;
 import data.NamesOfFields;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import model.Hotel;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
@@ -31,7 +33,8 @@ public class FieldsAreEditableTest extends BaseTestStat {
         newHotelPage.fillNewHotelData(hotel);
     }
 
-    @Test
+    @Test(priority = 1, description = "Verify that name field is editable")
+    @Severity(SeverityLevel.BLOCKER)
     public void testNameFieldIsEditable() {
         String actualAddHotelNameText = newHotelPage.getTypedNameValue();
         Log.LOG.debug("Comparison of actual result ('" + actualAddHotelNameText + "') " +
@@ -39,7 +42,8 @@ public class FieldsAreEditableTest extends BaseTestStat {
         Assert.assertTrue(actualAddHotelNameText.equals(text), "Name field isn't editable");
     }
 
-    @Test
+    @Test(priority = 1, description = "Verify that date of construction field is editable")
+    @Severity(SeverityLevel.BLOCKER)
     public void testDateOfConstructionFieldIsEditable() {
         String actualAddHotelDateOfConstructionText = newHotelPage.getTypedDateOfConstructionValue();
         Log.LOG.debug("Comparison of actual result ('" + actualAddHotelDateOfConstructionText + "') " +
@@ -47,7 +51,8 @@ public class FieldsAreEditableTest extends BaseTestStat {
         Assert.assertTrue(actualAddHotelDateOfConstructionText.equals("000"), "Date of construction field isn't editable");
     }
 
-    @Test
+    @Test(priority = 1, description = "Verify that country field is editable")
+    @Severity(SeverityLevel.BLOCKER)
     public void testCountryFieldIsEditable() {
         String actualAddHotelCountryText = newHotelPage.getSelectedCountryValue();
         Log.LOG.debug("Comparison of actual result ('" + actualAddHotelCountryText + "') " +
@@ -55,7 +60,8 @@ public class FieldsAreEditableTest extends BaseTestStat {
         Assert.assertTrue(actualAddHotelCountryText.equals(AddHotelDataProvider.testCountry), "Country field isn't editable");
     }
 
-    @Test
+    @Test(priority = 1, description = "Verify that city field is editable")
+    @Severity(SeverityLevel.BLOCKER)
     public void testCityFieldIsEditable() {
         String actualAddHotelCityText = newHotelPage.getSelectedCityValue();
         Log.LOG.debug("Comparison of actual result ('" + actualAddHotelCityText + "') " +
@@ -63,7 +69,8 @@ public class FieldsAreEditableTest extends BaseTestStat {
         Assert.assertTrue(actualAddHotelCityText.equals(AddHotelDataProvider.testCity), "City field isn't editable");
     }
 
-    @Test
+    @Test(priority = 1, description = "Verify that short description field is editable")
+    @Severity(SeverityLevel.BLOCKER)
     public void testShortDescriptionFieldIsEditable() {
         String actualAddHotelShortDescriptionText = newHotelPage.getTypedShortDescriptionValue();
         Log.LOG.debug("Comparison of actual result ('" + actualAddHotelShortDescriptionText + "') " +
@@ -71,7 +78,8 @@ public class FieldsAreEditableTest extends BaseTestStat {
         Assert.assertTrue(actualAddHotelShortDescriptionText.equals(text), "Short description field isn't editable");
     }
 
-    @Test
+    @Test(priority = 1, description = "Verify that description field is editable")
+    @Severity(SeverityLevel.BLOCKER)
     public void testDescriptionFieldIsEditable() {
         String actualAddHotelDescriptionText = newHotelPage.getTypedDescriptionValue();
         Log.LOG.debug("Comparison of actual result ('" + actualAddHotelDescriptionText + "') " +
@@ -79,7 +87,8 @@ public class FieldsAreEditableTest extends BaseTestStat {
         Assert.assertTrue(actualAddHotelDescriptionText.equals(text), "Description field isn't editable");
     }
 
-    @Test
+    @Test(priority = 3, description = "Verify that notes field is editable")
+    @Severity(SeverityLevel.NORMAL)
     public void testNotesFieldIsEditable() {
         String actualAddHotelNotesText = newHotelPage.getTypedNotesValue();
         Log.LOG.debug("Comparison of actual result ('" + actualAddHotelNotesText + "') " +

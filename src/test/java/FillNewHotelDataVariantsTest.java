@@ -15,9 +15,9 @@ public class FillNewHotelDataVariantsTest extends BaseTest {
     private NewHotelPage newHotelPage;
     private HotelListPage hotelListPage;
 
-    @Test(dataProvider = "addHotelPositiveTestData", dataProviderClass = AddHotelDataProvider.class,
-            groups = "positive tests", priority = 1, description = "Calculator positive test")
-    @Severity(SeverityLevel.CRITICAL)
+    @Test(dataProvider = "addHotelPositiveTestData", dataProviderClass = AddHotelDataProvider.class, priority = 1,
+            description = "New hotel adding positive tests")
+    @Severity(SeverityLevel.BLOCKER)
     @Description("Test uses data provider")
     public void testNewHotelAddingPositive(String name, String globalRating, String dateOfConstruction, String country,
                                            String city, String shortDescription, String description, String notes) {
@@ -39,9 +39,9 @@ public class FillNewHotelDataVariantsTest extends BaseTest {
         Assert.assertTrue(actualResult.equals(expectedResult), "Hotel adding hasn't been success");
     }
 
-    @Test(dataProvider = "addHotelNegativeTestData", dataProviderClass = AddHotelDataProvider.class,
-            groups = "negative tests", priority = 2, description = "calculator negative test")
-    @Severity(SeverityLevel.NORMAL)
+    @Test(dataProvider = "addHotelNegativeTestData", dataProviderClass = AddHotelDataProvider.class, priority = 2,
+            description = "New hotel adding negative tests")
+    @Severity(SeverityLevel.CRITICAL)
     @Description("Test uses data provider")
     public void testNewHotelAddingNegative(String name, String globalRating, String dateOfConstruction, String country,
                                            String city, String shortDescription, String description, String notes,

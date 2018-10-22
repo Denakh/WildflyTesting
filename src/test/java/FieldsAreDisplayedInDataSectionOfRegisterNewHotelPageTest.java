@@ -1,6 +1,8 @@
 import data.NamesOfFields;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import utils.Log;
@@ -9,7 +11,8 @@ import utils.Log;
 @Feature("Verifying by fields label text")
 public class FieldsAreDisplayedInDataSectionOfRegisterNewHotelPageTest extends BaseTestStat {
 
-    @Test
+    @Test(priority = 1, description = "Verify that name field is displayed")
+    @Severity(SeverityLevel.BLOCKER)
     public void testNameFieldIsDisplayed() {
         String actualAddHotelNameLabelText = newHotelPage.getAddHotelNameLabelText();
         Log.LOG.debug("Comparison of actual result ('" + actualAddHotelNameLabelText + "') " +
@@ -20,7 +23,8 @@ public class FieldsAreDisplayedInDataSectionOfRegisterNewHotelPageTest extends B
                         "', expected: '" + NamesOfFields.addHotelNameLabelText);
     }
 
-    @Test
+    @Test(priority = 2, description = "Verify that rating field is displayed")
+    @Severity(SeverityLevel.CRITICAL)
     public void testRatingFieldIsDisplayed() {
         String actualAddHotelRatingLabelText = newHotelPage.getAddHotelRatingLabelText();
         Log.LOG.debug("Comparison of actual result ('" + actualAddHotelRatingLabelText + "') " +
@@ -31,7 +35,8 @@ public class FieldsAreDisplayedInDataSectionOfRegisterNewHotelPageTest extends B
                         "', expected: '" + NamesOfFields.addHotelGlobalRatingLabelText);
     }
 
-    @Test
+    @Test(priority = 1, description = "Verify that date of construction field is displayed")
+    @Severity(SeverityLevel.BLOCKER)
     public void testDateOfConstructionFieldIsDisplayed() {
         String actualAddHotelDateOfConstructionLabelText = newHotelPage.getAddHotelDateOfConstructionLabelText();
         Log.LOG.debug("Comparison of actual result ('" + actualAddHotelDateOfConstructionLabelText + "') " +
@@ -42,7 +47,8 @@ public class FieldsAreDisplayedInDataSectionOfRegisterNewHotelPageTest extends B
                         "', expected: '" + NamesOfFields.addHotelDateOfConstructionLabelText);
     }
 
-    @Test
+    @Test(priority = 1, description = "Verify that country field is displayed")
+    @Severity(SeverityLevel.BLOCKER)
     public void testCountryFieldIsDisplayed() {
         String actualAddHotelCountryLabelText = newHotelPage.getAddHotelCountryLabelText();
         Log.LOG.debug("Comparison of actual result ('" + actualAddHotelCountryLabelText + "') " +
@@ -53,7 +59,8 @@ public class FieldsAreDisplayedInDataSectionOfRegisterNewHotelPageTest extends B
                         "', expected: '" + NamesOfFields.addHotelCountryLabelText);
     }
 
-    @Test
+    @Test(priority = 1, description = "Verify that city field is displayed")
+    @Severity(SeverityLevel.BLOCKER)
     public void testCityFieldIsDisplayed() {
         String actualAddHotelCityLabelText = newHotelPage.getAddHotelCityLabelText();
         Log.LOG.debug("Comparison of actual result ('" + actualAddHotelCityLabelText + "') " +
@@ -64,7 +71,8 @@ public class FieldsAreDisplayedInDataSectionOfRegisterNewHotelPageTest extends B
                         "', expected: '" + NamesOfFields.addHotelCityLabelText);
     }
 
-    @Test
+    @Test(priority = 1, description = "Verify that short description field is displayed")
+    @Severity(SeverityLevel.BLOCKER)
     public void testShortDescriptionFieldIsDisplayed() {
         String actualAddHotelShortDescriptionLabelText = newHotelPage.getAddHotelShortDescriptionLabelText();
         Log.LOG.debug("Comparison of actual result ('" + actualAddHotelShortDescriptionLabelText + "') " +
@@ -75,7 +83,8 @@ public class FieldsAreDisplayedInDataSectionOfRegisterNewHotelPageTest extends B
                         "', expected: '" + NamesOfFields.addHotelShortDescriptionLabelText);
     }
 
-    @Test
+    @Test(priority = 1, description = "Verify that description field is displayed")
+    @Severity(SeverityLevel.BLOCKER)
     public void testDescriptionFieldIsDisplayed() {
         String actualAddHotelDescriptionLabelText = newHotelPage.getAddHotelDescriptionLabelText();
         Log.LOG.debug("Comparison of actual result ('" + actualAddHotelDescriptionLabelText + "') " +
@@ -86,7 +95,8 @@ public class FieldsAreDisplayedInDataSectionOfRegisterNewHotelPageTest extends B
                         "', expected: '" + NamesOfFields.addHotelDescriptionLabelText);
     }
 
-    @Test
+    @Test(priority = 3, description = "Verify that notes field is displayed")
+    @Severity(SeverityLevel.NORMAL)
     public void testNotesFieldIsDisplayed() {
         String actualAddHotelNotesLabelText = newHotelPage.getAddHotelNotesLabelText();
         Log.LOG.debug("Comparison of actual result ('" + actualAddHotelNotesLabelText + "') " +
