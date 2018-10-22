@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import model.Hotel;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -89,112 +90,97 @@ public class NewHotelPage extends NavigatePage {
     @FindBy(css = "label[for='add_hotel:notes']")
     private WebElement addHotelNotesLabel;
 
-
     public NewHotelPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
         driver.navigate().refresh();
     }
 
+    @Step("Get new hotel page header text")
     public String getNewHotelPageHeaderText() {
         return newHotelPageHeader.getText();
     }
 
+    @Step("Get data section header text")
     public String getDataSectionHeaderText() {
-        /*
-        driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
-        new WebDriverWait(driver, 11).
-                until(ExpectedConditions.visibilityOf(uiPanelTitle));
-        driver.manage().timeouts().implicitlyWait(11, TimeUnit.SECONDS);
-        */
         waitingVisibilityOfWebElementByTimeInS(uiPanelTitle, 11);
         return uiPanelTitle.getText();
     }
 
+    @Step("Get save button label text")
     public String getSaveButtonText() {
         return addHotelButtone.getText();
     }
 
+    @Step("Get add hotel name label text")
     public String getAddHotelNameLabelText() {
         return addHotelNameLabel.getText();
     }
 
+    @Step("Get add hotel rating label text")
     public String getAddHotelRatingLabelText() {
         return addHotelRatingLabel.getText();
     }
 
+    @Step("Get add hotel date of construction label text")
     public String getAddHotelDateOfConstructionLabelText() {
         return addHotelDateOfConstructionLabel.getText();
     }
 
+    @Step("Get add hotel country label text")
     public String getAddHotelCountryLabelText() {
         return addHotelCountryLabel.getText();
     }
 
+    @Step("Get add hotel city label text")
     public String getAddHotelCityLabelText() {
         return addHotelCityLabel.getText();
     }
 
+    @Step("Get add hotel short description label text")
     public String getAddHotelShortDescriptionLabelText() {
         return addHotelShortDescriptionLabel.getText();
     }
 
+    @Step("Get add hotel description label text")
     public String getAddHotelDescriptionLabelText() {
         return addHotelDescriptionLabel.getText();
     }
 
+    @Step("Get add hotel notes label text")
     public String getAddHotelNotesLabelText() {
         return addHotelNotesLabel.getText();
     }
 
-
-    public String getAddHotelNameLabelSpanText() {
-        return addHotelNameLabelSpan.getText();
-    }
-
+    @Step("Get error message detail text")
     public String getMessageErrorDetailText() {
         return messageErrorDetail.getText();
     }
 
+    @Step("Type new hotel name by value: {name}")
     public NewHotelPage typeNewHotelName(String name) {
-/*
-        driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
-        new WebDriverWait(driver, 11).
-                until(ExpectedConditions.visibilityOf(addHotelNameInput));
-        driver.manage().timeouts().implicitlyWait(11, TimeUnit.SECONDS);
-*/
         waitingVisibilityOfWebElementByTimeInS(addHotelNameInput, 11);
         addHotelNameInput.sendKeys(name);
         return this;
     }
 
+    @Step("Type new hotel date of construction by value: {dateOfConstruction}")
     public NewHotelPage typeNewHotelDateOfConstruction(String dateOfConstruction) {
         dateOfConstructionInput.sendKeys(dateOfConstruction);
         return this;
     }
 
+    @Step("Select new hotel rating by value: {ratingString}")
     public NewHotelPage selectNewHotelRatingStars(String ratingString) {
-        //waitingByTimeInMS(1000);
         int rating = getIntFromString(ratingString);
-/*
-        driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
-        new WebDriverWait(driver, 11).
-                until(ExpectedConditions.visibilityOf(ratingStars.get(rating - 1)));
-        driver.manage().timeouts().implicitlyWait(11, TimeUnit.SECONDS);
-*/
         waitingVisibilityOfWebElementByTimeInS(ratingStars.get(rating - 1), 11);
         ratingStars.get(rating - 1).click();
         return this;
     }
 
+    @Step("Select new hotel country by value: {country}")
     public NewHotelPage selectNewHotelCountry(String country) {
         countryLabel.click();
-/*
-        driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
-        new WebDriverWait(driver, 11).
-                until(ExpectedConditions.visibilityOf(countryList.get(0)));
-        driver.manage().timeouts().implicitlyWait(11, TimeUnit.SECONDS);
-*/
         waitingVisibilityOfWebElementByTimeInS(countryList.get(0), 11);
         for (WebElement we : countryList) {
             if (we.getText().equals(country)) {
@@ -205,14 +191,9 @@ public class NewHotelPage extends NavigatePage {
         return this;
     }
 
+    @Step("Select new hotel city by value: {city}")
     public NewHotelPage selectNewHotelCity(String city) {
         cityLabel.click();
-/*
-        driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
-        new WebDriverWait(driver, 11).
-                until(ExpectedConditions.visibilityOf(cityList.get(0)));
-        driver.manage().timeouts().implicitlyWait(11, TimeUnit.SECONDS);
-*/
         waitingVisibilityOfWebElementByTimeInS(cityList.get(0), 11);
         for (WebElement we : cityList) {
             if (we.getText().equals(city)) {
@@ -223,60 +204,73 @@ public class NewHotelPage extends NavigatePage {
         return this;
     }
 
+    @Step("Type new hotel short description by value: {shortDescription}")
     public NewHotelPage typeNewHotelShortDescription(String shortDescription) {
         addHotelShortDescriptionInput.sendKeys(shortDescription);
         return this;
     }
 
+    @Step("Type new hotel description by value: {description}")
     public NewHotelPage typeNewHotelDescription(String description) {
         addHotelDescriptionInput.sendKeys(description);
         return this;
     }
 
+    @Step("Type new hotel notes by value: {notes}")
     public NewHotelPage typeNewHotelNotes(String notes) {
         addHotelNotesInput.sendKeys(notes);
         return this;
     }
 
+    @Step("Click save hotel button")
     public NewHotelPage clickSaveHotelButton() {
         addHotelButtone.click();
         return this;
     }
 
+    @Step("Get typed name value")
     public String getTypedNameValue() {
         return addHotelNameInput.getAttribute("value");
     }
 
+    @Step("Get typed date of construction value")
     public String getTypedDateOfConstructionValue() {
         return dateOfConstructionInput.getAttribute("value");
     }
 
+    @Step("Get selected country value")
     public String getSelectedCountryValue() {
         return countryLabel.getText();
     }
 
+    @Step("Get selected city value")
     public String getSelectedCityValue() {
         return cityLabel.getText();
     }
 
+    @Step("Get typed short description value")
     public String getTypedShortDescriptionValue() {
         return addHotelShortDescriptionInput.getAttribute("value");
     }
 
+    @Step("Get typed description value")
     public String getTypedDescriptionValue() {
         return addHotelDescriptionInput.getAttribute("value");
     }
 
+    @Step("Get typed notes value")
     public String getTypedNotesValue() {
         return addHotelNotesInput.getAttribute("value");
     }
 
+    @Step("Fill and send new hotel data")
     public NewHotelPage fillAndSendNewHotelData(Hotel hotel) {
         fillNewHotelData(hotel);
         clickSaveHotelButton();
         return this;
     }
 
+    @Step("Fill new hotel data")
     public NewHotelPage fillNewHotelData(Hotel hotel) {
         typeNewHotelName(hotel.getName());
         typeNewHotelDateOfConstruction(hotel.getDateOfConstruction());
@@ -305,6 +299,7 @@ public class NewHotelPage extends NavigatePage {
                 until(ExpectedConditions.visibilityOf(we));
         driver.manage().timeouts().implicitlyWait(waitingTime, TimeUnit.SECONDS);
     }
+
 /*
     private void waitingByTimeInMS(long waitingTime) {
         try {

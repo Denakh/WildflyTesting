@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -24,16 +25,19 @@ public class NavigatePage {
         PageFactory.initElements(driver, this);
     }
 
+    @Step("Move cursor to article menu")
     public NavigatePage moveCursorToArticleMenu() {
         new Actions(driver).moveToElement(articleMenu).build().perform();
         return this;
     }
 
+    @Step("Move cursor to new menu")
     public NavigatePage moveCursorToNewMenu() {
         new Actions(driver).moveToElement(newMenu).build().perform();
         return this;
     }
 
+    @Step("Click on hotel menu")
     public NavigatePage clickOnHotelMenu() {
         hotelMenu.click();
         return this;

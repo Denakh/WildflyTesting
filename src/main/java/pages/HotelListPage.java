@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -24,13 +25,15 @@ public class HotelListPage extends NavigatePage {
         PageFactory.initElements(driver, this);
     }
 
+    @Step("Get hotel list page header text")
     public String getHotelListPageHeaderText() {
         return hotelListPageHeader.getText();
     }
 
+    /*
     public String getLastAddedHotelName() {
         return hotelsMainDataList.get((hotelsList.size() - 1) * 6).getText();
     }
-
+    */
 
 }
