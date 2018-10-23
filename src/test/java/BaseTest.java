@@ -43,6 +43,7 @@ public class BaseTest {
     @AfterMethod(alwaysRun = true)
     public void tearDown(ITestResult testResult) throws IOException {
         if (testResult.getStatus() == ITestResult.FAILURE) {
+            Log.LOG.debug("Getting screenshot: ");
             Screenshots.getScreenShot(driver);
         }
     }
@@ -51,6 +52,7 @@ public class BaseTest {
     public void tearDownGeneral(ITestContext iTestContext) throws Exception {
         for (ITestResult testResult : iTestContext.getSkippedTests().getAllResults()) {
             if (testResult.getStatus() == ITestResult.SKIP) {
+                Log.LOG.debug("Getting screenshot: ");
                 Screenshots.getScreenShot(driver);
                 break;
             }

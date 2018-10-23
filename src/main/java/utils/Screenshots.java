@@ -14,7 +14,7 @@ public class Screenshots {
         File screenshot = ((TakesScreenshot) driver).
                 getScreenshotAs(OutputType.FILE);
         String path = "./target/screenshots/" + screenshot.getName();
-        Log.LOG.debug("Getting screenshot " + screenshot.getName());
+        Log.LOG.debug("in file " + screenshot.getName());
         FileUtils.copyFile(screenshot, new File(path));
     }
 
