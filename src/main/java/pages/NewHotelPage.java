@@ -247,6 +247,7 @@ public class NewHotelPage extends NavigatePage {
     @Step("Click save hotel button")
     public NewHotelPage clickSaveHotelButton() {
         Log.LOG.debug("Clicking save hotel button");
+        waitingClickAbilityOfWebElementByTimeInS(addHotelButtone, 11);
         addHotelButtone.click();
         return this;
     }
