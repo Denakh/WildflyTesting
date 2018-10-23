@@ -106,7 +106,7 @@ public class NewHotelPage extends NavigatePage {
     @Step("Get data section header text")
     public String getDataSectionHeaderText() {
         Log.LOG.debug("Getting data section header text");
-        waitingVisibilityOfWebElementByTimeInS(uiPanelTitle, 11);
+        waitingVisibilityOfWebElementByTimeInS(uiPanelTitle, 5);
         return uiPanelTitle.getText();
     }
 
@@ -172,7 +172,7 @@ public class NewHotelPage extends NavigatePage {
 
     @Step("Type new hotel name by value: {name}")
     public NewHotelPage typeNewHotelName(String name) {
-        waitingVisibilityOfWebElementByTimeInS(addHotelNameInput, 11);
+        waitingVisibilityOfWebElementByTimeInS(addHotelNameInput, 5);
         Log.LOG.debug("Typing new hotel name by value: " + name);
         addHotelNameInput.sendKeys(name);
         return this;
@@ -188,7 +188,7 @@ public class NewHotelPage extends NavigatePage {
     @Step("Select new hotel rating by value: {ratingString}")
     public NewHotelPage selectNewHotelRatingStars(String ratingString) {
         int rating = getIntFromString(ratingString);
-        waitingVisibilityOfWebElementByTimeInS(ratingStars.get(rating - 1), 11);
+        waitingVisibilityOfWebElementByTimeInS(ratingStars.get(rating - 1), 5);
         Log.LOG.debug("Selecting new hotel rating by value: " + ratingString);
         ratingStars.get(rating - 1).click();
         return this;
@@ -198,7 +198,7 @@ public class NewHotelPage extends NavigatePage {
     public NewHotelPage selectNewHotelCountry(String country) {
         Log.LOG.debug("Selecting new hotel country by value: " + country);
         countryLabel.click();
-        waitingVisibilityOfWebElementByTimeInS(countryList.get(0), 11);
+        waitingVisibilityOfWebElementByTimeInS(countryList.get(0), 5);
         for (WebElement we : countryList) {
             if (we.getText().equals(country)) {
                 we.click();
@@ -211,9 +211,9 @@ public class NewHotelPage extends NavigatePage {
     @Step("Select new hotel city by value: {city}")
     public NewHotelPage selectNewHotelCity(String city) {
         Log.LOG.debug("Selecting new hotel city by value: " + city);
-        waitingClickAbilityOfWebElementByTimeInS(cityLabel, 11);
+        waitingClickAbilityOfWebElementByTimeInS(cityLabel, 5);
         cityLabel.click();
-        waitingVisibilityOfWebElementByTimeInS(cityList.get(0), 11);
+        waitingVisibilityOfWebElementByTimeInS(cityList.get(0), 5);
         for (WebElement we : cityList) {
             if (we.getText().equals(city)) {
                 we.click();
@@ -247,7 +247,7 @@ public class NewHotelPage extends NavigatePage {
     @Step("Click save hotel button")
     public NewHotelPage clickSaveHotelButton() {
         Log.LOG.debug("Clicking save hotel button");
-        waitingClickAbilityOfWebElementByTimeInS(addHotelButtone, 11);
+        waitingClickAbilityOfWebElementByTimeInS(addHotelButtone, 5);
         addHotelButtone.click();
         return this;
     }

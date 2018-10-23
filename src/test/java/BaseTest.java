@@ -26,7 +26,7 @@ public class BaseTest {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("http://localhost:8035/article/faces/welcome.xhtml");
-        driver.manage().timeouts().implicitlyWait(11, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         navigatePage = new NavigatePage(driver);
     }
 
