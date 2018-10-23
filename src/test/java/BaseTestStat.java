@@ -11,7 +11,6 @@ import utils.Log;
 import utils.Screenshots;
 
 import java.io.IOException;
-import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 public class BaseTestStat {
@@ -38,21 +37,21 @@ public class BaseTestStat {
     @AfterMethod(alwaysRun = true)
     public void tearDown(ITestResult testResult) throws IOException {
         if (testResult.getStatus() == ITestResult.FAILURE) {
-            Log.LOG.debug("Getting screenshot: ");
+            Log.LOG.debug("Getting screenshot because of test is failed: ");
             Screenshots.getScreenShot(driver);
         }
     }
 
     @AfterClass(alwaysRun = true)
     public void tearDownGeneral(ITestContext iTestContext) throws Exception {
+        Log.LOG.debug("Test tear down general");
         for (ITestResult testResult : iTestContext.getSkippedTests().getAllResults()) {
             if (testResult.getStatus() == ITestResult.SKIP) {
-                Log.LOG.debug("Getting screenshot: ");
+                Log.LOG.debug("Getting screenshot because of test is skipped: ");
                 Screenshots.getScreenShot(driver);
                 break;
             }
         }
-        Log.LOG.debug("Test tear down general");
         driver.manage().deleteAllCookies();
         driver.close();
     }

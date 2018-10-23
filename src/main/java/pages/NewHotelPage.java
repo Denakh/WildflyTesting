@@ -211,6 +211,7 @@ public class NewHotelPage extends NavigatePage {
     @Step("Select new hotel city by value: {city}")
     public NewHotelPage selectNewHotelCity(String city) {
         Log.LOG.debug("Selecting new hotel city by value: " + city);
+        waitingClickAbilityOfWebElementByTimeInS(cityLabel, 11);
         cityLabel.click();
         waitingVisibilityOfWebElementByTimeInS(cityList.get(0), 11);
         for (WebElement we : cityList) {
@@ -330,6 +331,14 @@ public class NewHotelPage extends NavigatePage {
         driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
         new WebDriverWait(driver, waitingTime).
                 until(ExpectedConditions.visibilityOf(we));
+        driver.manage().timeouts().implicitlyWait(waitingTime, TimeUnit.SECONDS);
+    }
+
+    private void waitingClickAbilityOfWebElementByTimeInS(WebElement we, int waitingTime) {
+        Log.LOG.debug("Waiting click ability of web element '" + we + "' by time in sec.: " + waitingTime);
+        driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
+        new WebDriverWait(driver, waitingTime).
+                until(ExpectedConditions.elementToBeClickable(we));
         driver.manage().timeouts().implicitlyWait(waitingTime, TimeUnit.SECONDS);
     }
 
