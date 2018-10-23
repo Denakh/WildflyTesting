@@ -25,7 +25,7 @@ public class BaseTestStat {
         System.setProperty("webdriver.chrome.driver", "C:\\WebDrivers\\chromedriver_win32\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get("http://localhost:8080/article/faces/welcome.xhtml");
+        driver.get("http://localhost:8035/article/faces/welcome.xhtml");
         driver.manage().timeouts().implicitlyWait(11, TimeUnit.SECONDS);
         navigatePage = new NavigatePage(driver);
         navigatePage.moveCursorToArticleMenu().
