@@ -43,13 +43,11 @@ public class NewHotelPage extends NavigatePage {
     @FindBy(css = "label[for='add_hotel:rate']")
     private WebElement addHotelRatingLabel;
 
-
     @FindBy(css = "input[id='add_hotel:dateOfConstruction_input']")
     private WebElement dateOfConstructionInput;
 
     @FindBy(css = "label[for='add_hotel:dateOfConstruction_input']")
     private WebElement addHotelDateOfConstructionLabel;
-
 
     @FindBy(css = "label[id='add_hotel:country_label']")
     private WebElement countryLabel;
@@ -60,7 +58,6 @@ public class NewHotelPage extends NavigatePage {
     @FindBy(css = "label[for='add_hotel:country_input']")
     private WebElement addHotelCountryLabel;
 
-
     @FindBy(css = "label[id='add_hotel:city_label']")
     private WebElement cityLabel;
 
@@ -70,20 +67,17 @@ public class NewHotelPage extends NavigatePage {
     @FindBy(css = "label[for='add_hotel:city_input']")
     private WebElement addHotelCityLabel;
 
-
     @FindBy(css = "input[id='add_hotel:short_description']")
     private WebElement addHotelShortDescriptionInput;
 
     @FindBy(css = "label[for='add_hotel:short_description']")
     private WebElement addHotelShortDescriptionLabel;
 
-
     @FindBy(css = "textarea[id='add_hotel:description']")
     private WebElement addHotelDescriptionInput;
 
     @FindBy(css = "label[for='add_hotel:description']")
     private WebElement addHotelDescriptionLabel;
-
 
     @FindBy(css = "textarea[id='add_hotel:notes']")
     private WebElement addHotelNotesInput;
@@ -95,6 +89,7 @@ public class NewHotelPage extends NavigatePage {
         super(driver);
         PageFactory.initElements(driver, this);
         driver.navigate().refresh();
+        waitingByTimeInMS(500);
     }
 
     @Step("Get new hotel page header text")
@@ -188,7 +183,7 @@ public class NewHotelPage extends NavigatePage {
     @Step("Select new hotel rating by value: {ratingString}")
     public NewHotelPage selectNewHotelRatingStars(String ratingString) {
         int rating = getIntFromString(ratingString);
-        waitingVisibilityOfWebElementByTimeInS(ratingStars.get(rating - 1), 5);
+        waitingClickAbilityOfWebElementByTimeInS(ratingStars.get(rating - 1), 7);
         Log.LOG.debug("Selecting new hotel rating by value: " + ratingString);
         ratingStars.get(rating - 1).click();
         return this;
@@ -211,15 +206,17 @@ public class NewHotelPage extends NavigatePage {
     @Step("Select new hotel city by value: {city}")
     public NewHotelPage selectNewHotelCity(String city) {
         Log.LOG.debug("Selecting new hotel city by value: " + city);
-        waitingClickAbilityOfWebElementByTimeInS(cityLabel, 5);
+        waitingByTimeInMS(500);
+        waitingClickAbilityOfWebElementByTimeInS(cityLabel, 7);
         cityLabel.click();
-        waitingVisibilityOfWebElementByTimeInS(cityList.get(0), 5);
+        waitingClickAbilityOfWebElementByTimeInS(cityList.get(0), 7);
         for (WebElement we : cityList) {
             if (we.getText().equals(city)) {
                 we.click();
                 break;
             }
         }
+        waitingByTimeInMS(500);
         return this;
     }
 
@@ -294,11 +291,12 @@ public class NewHotelPage extends NavigatePage {
         return addHotelNotesInput.getAttribute("value");
     }
 
-    @Step("Fill and send new hotel data")
+    @Step("Send new hotel data")
     public NewHotelPage fillAndSendNewHotelData(Hotel hotel) {
-        Log.LOG.debug("Filling and sending new hotel data");
+        Log.LOG.debug("Sending new hotel data");
         fillNewHotelData(hotel);
         clickSaveHotelButton();
+        waitingByTimeInMS(500);
         return this;
     }
 
@@ -343,7 +341,6 @@ public class NewHotelPage extends NavigatePage {
         driver.manage().timeouts().implicitlyWait(waitingTime, TimeUnit.SECONDS);
     }
 
-/*
     private void waitingByTimeInMS(long waitingTime) {
         try {
             Thread.sleep(waitingTime);
@@ -351,5 +348,5 @@ public class NewHotelPage extends NavigatePage {
             e.printStackTrace();
         }
     }
-*/
+
 }

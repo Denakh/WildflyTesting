@@ -24,6 +24,7 @@ public class NavigatePage {
     public NavigatePage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
+        waitingByTimeInMS(500);
     }
 
     @Step("Move cursor to article menu")
@@ -45,6 +46,14 @@ public class NavigatePage {
         Log.LOG.debug("Clicking on hotel menu");
         hotelMenu.click();
         return this;
+    }
+
+    private void waitingByTimeInMS(long waitingTime) {
+        try {
+            Thread.sleep(waitingTime);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
 }
