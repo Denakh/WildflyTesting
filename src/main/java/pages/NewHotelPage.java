@@ -326,7 +326,7 @@ public class NewHotelPage extends NavigatePage {
     }
 
     private void waitingVisibilityOfWebElementByTimeInS(WebElement we, int waitingTime) {
-        Log.LOG.debug("Waiting visibility of web element '" + we + "' by time in sec.: " + waitingTime);
+        //Log.LOG.debug("Waiting visibility of web element '" + we + "' by time in sec.: " + waitingTime);
         driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
         new WebDriverWait(driver, waitingTime).
                 until(ExpectedConditions.visibilityOf(we));
@@ -334,7 +334,7 @@ public class NewHotelPage extends NavigatePage {
     }
 
     private void waitingClickAbilityOfWebElementByTimeInS(WebElement we, int waitingTime) {
-        Log.LOG.debug("Waiting click ability of web element '" + we + "' by time in sec.: " + waitingTime);
+        //Log.LOG.debug("Waiting click ability of web element '" + we + "' by time in sec.: " + waitingTime);
         driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
         new WebDriverWait(driver, waitingTime).
                 until(ExpectedConditions.elementToBeClickable(we));
