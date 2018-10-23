@@ -1,0 +1,364 @@
+Started by user Khokhlin Denis
+Building in workspace C:\Program Files\Jenkins\workspace\WildflyTesting
+ > git.exe rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git.exe config remote.origin.url https://github.com/Denakh/WildflyTesting # timeout=10
+Fetching upstream changes from https://github.com/Denakh/WildflyTesting
+ > git.exe --version # timeout=10
+ > git.exe fetch --tags --progress https://github.com/Denakh/WildflyTesting +refs/heads/*:refs/remotes/origin/*
+ > git.exe rev-parse "refs/remotes/origin/master^{commit}" # timeout=10
+ > git.exe rev-parse "refs/remotes/origin/origin/master^{commit}" # timeout=10
+Checking out Revision 37f2f8d3a28910d87c2f3061f0a91ddc570a2307 (refs/remotes/origin/master)
+ > git.exe config core.sparsecheckout # timeout=10
+ > git.exe checkout -f 37f2f8d3a28910d87c2f3061f0a91ddc570a2307
+Commit message: "Finally completed version"
+ > git.exe rev-list --no-walk 6a3bd74573be6b5b7cdf0787569d1fda15ebfb02 # timeout=10
+Parsing POMs
+Modules changed, recalculating dependency graph
+Established TCP socket on 17937
+[WildflyTesting] $ "C:\Program Files\Jenkins\tools\hudson.model.JDK\Oracle/bin/java" -cp "C:\Program Files\Jenkins\plugins\maven-plugin\WEB-INF\lib\maven35-agent-1.12-alpha-1.jar;C:\Program Files\Jenkins\tools\hudson.tasks.Maven_MavenInstallation\Maven3\boot\plexus-classworlds-2.5.2.jar;C:\Program Files\Jenkins\tools\hudson.tasks.Maven_MavenInstallation\Maven3/conf/logging" jenkins.maven3.agent.Maven35Main "C:\Program Files\Jenkins\tools\hudson.tasks.Maven_MavenInstallation\Maven3" "C:\Program Files\Jenkins\war\WEB-INF\lib\remoting-3.25.jar" "C:\Program Files\Jenkins\plugins\maven-plugin\WEB-INF\lib\maven35-interceptor-1.12-alpha-1.jar" "C:\Program Files\Jenkins\plugins\maven-plugin\WEB-INF\lib\maven3-interceptor-commons-1.12-alpha-1.jar" 17937
+<===[JENKINS REMOTING CAPACITY]===>channel started
+Executing Maven:  -B -f C:\Program Files\Jenkins\workspace\WildflyTesting\pom.xml install
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for Denakh:WildflyTesting:jar:1.0-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-compiler-plugin is missing. @ line 55, column 21
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] -----------------------< Denakh:WildflyTesting >------------------------
+[INFO] Building Wildfly testing app 1.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ WildflyTesting ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ WildflyTesting ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ WildflyTesting ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Program Files\Jenkins\workspace\WildflyTesting\src\test\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ WildflyTesting ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.20:test (default-test) @ WildflyTesting ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running TestSuite
+2018-10-23 22:48:56 DEBUG Log:24 - Test general set up
+Starting ChromeDriver 2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e) on port 33061
+Only local connections are allowed.
+жовт. 23, 2018 10:48:59 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+2018-10-23 22:49:08 DEBUG Log:32 - Moving cursor to article menu
+2018-10-23 22:49:08 DEBUG Log:39 - Moving cursor to new menu
+2018-10-23 22:49:08 DEBUG Log:46 - Clicking on hotel menu
+2018-10-23 22:49:11 DEBUG Log:103 - Getting data section header text
+2018-10-23 22:49:11 DEBUG Log:31 - Comparison of actual result ('Data:') and expected ('Data:')
+2018-10-23 22:49:11 DEBUG Log:97 - Getting new hotel page header text
+2018-10-23 22:49:11 DEBUG Log:21 - Comparison of actual result ('Register new Hotel') and expected ('Register new Hotel')
+2018-10-23 22:49:11 DEBUG Log:110 - Getting save button label text
+2018-10-23 22:49:12 DEBUG Log:41 - Comparison of actual result ('Save') and expected ('Save')
+2018-10-23 22:49:12 DEBUG Log:47 - Test tear down general
+2018-10-23 22:49:14 DEBUG Log:24 - Test general set up
+Starting ChromeDriver 2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e) on port 18311
+Only local connections are allowed.
+жовт. 23, 2018 10:49:19 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+2018-10-23 22:49:22 DEBUG Log:32 - Moving cursor to article menu
+2018-10-23 22:49:22 DEBUG Log:39 - Moving cursor to new menu
+2018-10-23 22:49:22 DEBUG Log:46 - Clicking on hotel menu
+2018-10-23 22:49:23 DEBUG Log:140 - Getting add hotel city label text
+2018-10-23 22:49:23 DEBUG Log:66 - Comparison of actual result ('City:*') and expected ('City:*')
+2018-10-23 22:49:23 DEBUG Log:134 - Getting add hotel country label text
+2018-10-23 22:49:23 DEBUG Log:54 - Comparison of actual result ('Country:*') and expected ('Country:*')
+2018-10-23 22:49:23 DEBUG Log:128 - Getting add hotel date of construction label text
+2018-10-23 22:49:23 DEBUG Log:42 - Comparison of actual result ('Date of Construction:*') and expected ('Date of Construction:*')
+2018-10-23 22:49:23 DEBUG Log:152 - Getting add hotel description label text
+2018-10-23 22:49:24 DEBUG Log:90 - Comparison of actual result ('Description:*') and expected ('Description:*')
+2018-10-23 22:49:24 DEBUG Log:116 - Getting add hotel name label text
+2018-10-23 22:49:24 DEBUG Log:18 - Comparison of actual result ('Name:*') and expected ('Name:*')
+2018-10-23 22:49:24 DEBUG Log:146 - Getting add hotel short description label text
+2018-10-23 22:49:24 DEBUG Log:78 - Comparison of actual result ('Short Description:*') and expected ('Short Description:*')
+2018-10-23 22:49:24 DEBUG Log:122 - Getting add hotel rating label text
+2018-10-23 22:49:24 DEBUG Log:30 - Comparison of actual result ('Global Rating:') and expected ('Global Rating:')
+2018-10-23 22:49:24 DEBUG Log:158 - Getting add hotel notes label text
+2018-10-23 22:49:24 DEBUG Log:102 - Comparison of actual result ('Notes:') and expected ('Notes:')
+2018-10-23 22:49:24 DEBUG Log:47 - Test tear down general
+2018-10-23 22:49:24 DEBUG Log:24 - Test general set up
+Starting ChromeDriver 2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e) on port 14553
+Only local connections are allowed.
+жовт. 23, 2018 10:49:27 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+2018-10-23 22:49:29 DEBUG Log:32 - Moving cursor to article menu
+2018-10-23 22:49:30 DEBUG Log:39 - Moving cursor to new menu
+2018-10-23 22:49:30 DEBUG Log:46 - Clicking on hotel menu
+2018-10-23 22:49:31 DEBUG Log:140 - Getting add hotel city label text
+2018-10-23 22:49:31 DEBUG Log:47 - Checking that actual result ('City:*') contains ('*')
+2018-10-23 22:49:31 DEBUG Log:134 - Getting add hotel country label text
+2018-10-23 22:49:31 DEBUG Log:37 - Checking that actual result ('Country:*') contains ('*')
+2018-10-23 22:49:31 DEBUG Log:128 - Getting add hotel date of construction label text
+2018-10-23 22:49:31 DEBUG Log:27 - Checking that actual result ('Date of Construction:*') contains ('*')
+2018-10-23 22:49:31 DEBUG Log:152 - Getting add hotel description label text
+2018-10-23 22:49:31 DEBUG Log:67 - Checking that actual result ('Description:*') contains ('*')
+2018-10-23 22:49:31 DEBUG Log:116 - Getting add hotel name label text
+2018-10-23 22:49:32 DEBUG Log:17 - Checking that actual result ('Name:*') contains ('*')
+2018-10-23 22:49:32 DEBUG Log:146 - Getting add hotel short description label text
+2018-10-23 22:49:32 DEBUG Log:57 - Checking that actual result ('Short Description:*') contains ('*')
+2018-10-23 22:49:32 DEBUG Log:47 - Test tear down general
+2018-10-23 22:49:32 DEBUG Log:24 - Test general set up
+Starting ChromeDriver 2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e) on port 13165
+Only local connections are allowed.
+жовт. 23, 2018 10:49:34 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+2018-10-23 22:49:37 DEBUG Log:32 - Moving cursor to article menu
+2018-10-23 22:49:37 DEBUG Log:39 - Moving cursor to new menu
+2018-10-23 22:49:37 DEBUG Log:46 - Clicking on hotel menu
+2018-10-23 22:49:39 DEBUG Log:305 - Filling new hotel data
+2018-10-23 22:49:39 DEBUG Log:171 - Typing new hotel name by value: editable
+2018-10-23 22:49:39 DEBUG Log:178 - Typing new hotel date of construction by value: 000
+2018-10-23 22:49:39 DEBUG Log:194 - Selecting new hotel country by value: UK
+2018-10-23 22:49:39 DEBUG Log:225 - Typing new hotel short description by value: editable
+2018-10-23 22:49:39 DEBUG Log:232 - Typing new hotel description by value: editable
+2018-10-23 22:49:40 DEBUG Log:239 - Typing new hotel notes by value: editable
+2018-10-23 22:49:40 DEBUG Log:208 - Selecting new hotel city by value: Chester
+2018-10-23 22:49:41 DEBUG Log:318 - Getting int number from string by value: 3
+2018-10-23 22:49:41 DEBUG Log:187 - Selecting new hotel rating by value: 3
+2018-10-23 22:49:41 DEBUG Log:272 - Getting selected city value
+2018-10-23 22:49:41 DEBUG Log:66 - Comparison of actual result ('Chester') and expected ('Chester')
+2018-10-23 22:49:41 DEBUG Log:266 - Getting selected country value
+2018-10-23 22:49:41 DEBUG Log:57 - Comparison of actual result ('UK') and expected ('UK')
+2018-10-23 22:49:41 DEBUG Log:260 - Getting typed date of construction value
+2018-10-23 22:49:41 DEBUG Log:48 - Comparison of actual result ('000') and expected ('000')
+2018-10-23 22:49:41 DEBUG Log:284 - Getting typed description value
+2018-10-23 22:49:41 DEBUG Log:84 - Comparison of actual result ('editable') and expected ('editable')
+2018-10-23 22:49:41 DEBUG Log:254 - Getting typed name value
+2018-10-23 22:49:41 DEBUG Log:39 - Comparison of actual result ('editable') and expected ('editable')
+2018-10-23 22:49:41 DEBUG Log:278 - Getting typed short description value
+2018-10-23 22:49:41 DEBUG Log:75 - Comparison of actual result ('editable') and expected ('editable')
+2018-10-23 22:49:41 DEBUG Log:290 - Getting typed notes value
+2018-10-23 22:49:41 DEBUG Log:93 - Comparison of actual result ('editable') and expected ('editable')
+2018-10-23 22:49:41 DEBUG Log:47 - Test tear down general
+2018-10-23 22:49:42 DEBUG Log:24 - Test general set up
+Starting ChromeDriver 2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e) on port 3979
+Only local connections are allowed.
+жовт. 23, 2018 10:49:45 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+2018-10-23 22:49:47 DEBUG Log:35 - Test set up
+2018-10-23 22:49:47 DEBUG Log:32 - Moving cursor to article menu
+2018-10-23 22:49:47 DEBUG Log:39 - Moving cursor to new menu
+2018-10-23 22:49:47 DEBUG Log:46 - Clicking on hotel menu
+2018-10-23 22:49:49 DEBUG Log:296 - Sending new hotel data
+2018-10-23 22:49:49 DEBUG Log:305 - Filling new hotel data
+2018-10-23 22:49:49 DEBUG Log:171 - Typing new hotel name by value: Hotel 500
+2018-10-23 22:49:49 DEBUG Log:178 - Typing new hotel date of construction by value: 01.01.1975
+2018-10-23 22:49:50 DEBUG Log:194 - Selecting new hotel country by value: USA
+2018-10-23 22:49:50 DEBUG Log:225 - Typing new hotel short description by value: Short description 777
+2018-10-23 22:49:50 DEBUG Log:232 - Typing new hotel description by value: Long description 777
+2018-10-23 22:49:50 DEBUG Log:239 - Typing new hotel notes by value: Some notes 777
+2018-10-23 22:49:50 DEBUG Log:208 - Selecting new hotel city by value: Dallas
+2018-10-23 22:49:52 DEBUG Log:318 - Getting int number from string by value: 3
+2018-10-23 22:49:52 DEBUG Log:187 - Selecting new hotel rating by value: 3
+2018-10-23 22:49:52 DEBUG Log:246 - Clicking save hotel button
+2018-10-23 22:49:53 DEBUG Log:31 - Getting hotel list page header text
+2018-10-23 22:49:53 DEBUG Log:38 - Comparison of actual result ('List of all hotels') and expected ('List of all hotels')
+2018-10-23 22:49:53 DEBUG Log:35 - Test set up
+2018-10-23 22:49:53 DEBUG Log:32 - Moving cursor to article menu
+2018-10-23 22:49:53 DEBUG Log:39 - Moving cursor to new menu
+2018-10-23 22:49:53 DEBUG Log:46 - Clicking on hotel menu
+2018-10-23 22:49:55 DEBUG Log:296 - Sending new hotel data
+2018-10-23 22:49:55 DEBUG Log:305 - Filling new hotel data
+2018-10-23 22:49:55 DEBUG Log:171 - Typing new hotel name by value: Hotel 700
+2018-10-23 22:49:55 DEBUG Log:178 - Typing new hotel date of construction by value: 01.01.1975
+2018-10-23 22:49:55 DEBUG Log:194 - Selecting new hotel country by value: USA
+2018-10-23 22:49:55 DEBUG Log:225 - Typing new hotel short description by value: Short description 777
+2018-10-23 22:49:55 DEBUG Log:232 - Typing new hotel description by value: Long description 777
+2018-10-23 22:49:55 DEBUG Log:239 - Typing new hotel notes by value: 
+2018-10-23 22:49:56 DEBUG Log:208 - Selecting new hotel city by value: Dallas
+2018-10-23 22:49:57 DEBUG Log:318 - Getting int number from string by value: 3
+2018-10-23 22:49:57 DEBUG Log:187 - Selecting new hotel rating by value: 3
+2018-10-23 22:49:57 DEBUG Log:246 - Clicking save hotel button
+2018-10-23 22:49:58 DEBUG Log:31 - Getting hotel list page header text
+2018-10-23 22:49:58 DEBUG Log:38 - Comparison of actual result ('List of all hotels') and expected ('List of all hotels')
+2018-10-23 22:49:58 DEBUG Log:35 - Test set up
+2018-10-23 22:49:58 DEBUG Log:32 - Moving cursor to article menu
+2018-10-23 22:49:58 DEBUG Log:39 - Moving cursor to new menu
+2018-10-23 22:49:58 DEBUG Log:46 - Clicking on hotel menu
+2018-10-23 22:50:00 DEBUG Log:296 - Sending new hotel data
+2018-10-23 22:50:00 DEBUG Log:305 - Filling new hotel data
+2018-10-23 22:50:00 DEBUG Log:171 - Typing new hotel name by value: Hotel 1
+2018-10-23 22:50:00 DEBUG Log:178 - Typing new hotel date of construction by value: 01.01.2001
+2018-10-23 22:50:00 DEBUG Log:194 - Selecting new hotel country by value: UK
+2018-10-23 22:50:00 DEBUG Log:225 - Typing new hotel short description by value: Short description
+2018-10-23 22:50:00 DEBUG Log:232 - Typing new hotel description by value: Long description
+2018-10-23 22:50:00 DEBUG Log:239 - Typing new hotel notes by value: Some notes
+2018-10-23 22:50:00 DEBUG Log:208 - Selecting new hotel city by value: Chester
+2018-10-23 22:50:02 DEBUG Log:318 - Getting int number from string by value: 4
+2018-10-23 22:50:02 DEBUG Log:187 - Selecting new hotel rating by value: 4
+2018-10-23 22:50:02 DEBUG Log:246 - Clicking save hotel button
+2018-10-23 22:50:03 DEBUG Log:31 - Getting hotel list page header text
+2018-10-23 22:50:03 DEBUG Log:38 - Comparison of actual result ('List of all hotels') and expected ('List of all hotels')
+2018-10-23 22:50:03 DEBUG Log:35 - Test set up
+2018-10-23 22:50:03 DEBUG Log:32 - Moving cursor to article menu
+2018-10-23 22:50:03 DEBUG Log:39 - Moving cursor to new menu
+2018-10-23 22:50:03 DEBUG Log:46 - Clicking on hotel menu
+2018-10-23 22:50:04 DEBUG Log:296 - Sending new hotel data
+2018-10-23 22:50:04 DEBUG Log:305 - Filling new hotel data
+2018-10-23 22:50:04 DEBUG Log:171 - Typing new hotel name by value: 
+2018-10-23 22:50:04 DEBUG Log:178 - Typing new hotel date of construction by value: 01.01.2001
+2018-10-23 22:50:04 DEBUG Log:194 - Selecting new hotel country by value: UK
+2018-10-23 22:50:05 DEBUG Log:225 - Typing new hotel short description by value: Short description
+2018-10-23 22:50:05 DEBUG Log:232 - Typing new hotel description by value: Long description
+2018-10-23 22:50:05 DEBUG Log:239 - Typing new hotel notes by value: Some notes
+2018-10-23 22:50:05 DEBUG Log:208 - Selecting new hotel city by value: Chester
+2018-10-23 22:50:06 DEBUG Log:318 - Getting int number from string by value: 4
+2018-10-23 22:50:06 DEBUG Log:187 - Selecting new hotel rating by value: 4
+2018-10-23 22:50:06 DEBUG Log:246 - Clicking save hotel button
+2018-10-23 22:50:07 DEBUG Log:164 - Getting error message detail text
+2018-10-23 22:50:07 DEBUG Log:61 - Checking that actual result ('Name: Validation Error: Value is required.') contains ('Name: Validation Error: Value is required.')
+2018-10-23 22:50:07 DEBUG Log:35 - Test set up
+2018-10-23 22:50:07 DEBUG Log:32 - Moving cursor to article menu
+2018-10-23 22:50:07 DEBUG Log:39 - Moving cursor to new menu
+2018-10-23 22:50:07 DEBUG Log:46 - Clicking on hotel menu
+2018-10-23 22:50:09 DEBUG Log:296 - Sending new hotel data
+2018-10-23 22:50:09 DEBUG Log:305 - Filling new hotel data
+2018-10-23 22:50:09 DEBUG Log:171 - Typing new hotel name by value: Hotel
+2018-10-23 22:50:09 DEBUG Log:178 - Typing new hotel date of construction by value: 01012001
+2018-10-23 22:50:09 DEBUG Log:194 - Selecting new hotel country by value: UK
+2018-10-23 22:50:09 DEBUG Log:225 - Typing new hotel short description by value: Short description
+2018-10-23 22:50:09 DEBUG Log:232 - Typing new hotel description by value: Long description
+2018-10-23 22:50:09 DEBUG Log:239 - Typing new hotel notes by value: Some notes
+2018-10-23 22:50:09 DEBUG Log:208 - Selecting new hotel city by value: Chester
+2018-10-23 22:50:11 DEBUG Log:318 - Getting int number from string by value: 4
+2018-10-23 22:50:11 DEBUG Log:187 - Selecting new hotel rating by value: 4
+2018-10-23 22:50:11 DEBUG Log:246 - Clicking save hotel button
+2018-10-23 22:50:12 DEBUG Log:164 - Getting error message detail text
+2018-10-23 22:50:12 DEBUG Log:61 - Checking that actual result ('Date of Construction: '01012001' could not be understood as a date. Example: 23.10.18') contains ('Date of Construction: '01012001' could not be understood as a date.')
+2018-10-23 22:50:12 DEBUG Log:35 - Test set up
+2018-10-23 22:50:12 DEBUG Log:32 - Moving cursor to article menu
+2018-10-23 22:50:12 DEBUG Log:39 - Moving cursor to new menu
+2018-10-23 22:50:12 DEBUG Log:46 - Clicking on hotel menu
+2018-10-23 22:50:13 DEBUG Log:296 - Sending new hotel data
+2018-10-23 22:50:13 DEBUG Log:305 - Filling new hotel data
+2018-10-23 22:50:13 DEBUG Log:171 - Typing new hotel name by value: Hotel
+2018-10-23 22:50:13 DEBUG Log:178 - Typing new hotel date of construction by value: 
+2018-10-23 22:50:13 DEBUG Log:194 - Selecting new hotel country by value: UK
+2018-10-23 22:50:13 DEBUG Log:225 - Typing new hotel short description by value: Short description
+2018-10-23 22:50:13 DEBUG Log:232 - Typing new hotel description by value: Long description
+2018-10-23 22:50:14 DEBUG Log:239 - Typing new hotel notes by value: Some notes
+2018-10-23 22:50:14 DEBUG Log:208 - Selecting new hotel city by value: Chester
+2018-10-23 22:50:15 DEBUG Log:318 - Getting int number from string by value: 4
+2018-10-23 22:50:15 DEBUG Log:187 - Selecting new hotel rating by value: 4
+2018-10-23 22:50:15 DEBUG Log:246 - Clicking save hotel button
+2018-10-23 22:50:16 DEBUG Log:164 - Getting error message detail text
+2018-10-23 22:50:16 DEBUG Log:61 - Checking that actual result ('Date of Construction: Validation Error: Value is required.') contains ('Date of Construction: Validation Error: Value is required.')
+2018-10-23 22:50:16 DEBUG Log:35 - Test set up
+2018-10-23 22:50:16 DEBUG Log:32 - Moving cursor to article menu
+2018-10-23 22:50:16 DEBUG Log:39 - Moving cursor to new menu
+2018-10-23 22:50:16 DEBUG Log:46 - Clicking on hotel menu
+2018-10-23 22:50:17 DEBUG Log:296 - Sending new hotel data
+2018-10-23 22:50:17 DEBUG Log:305 - Filling new hotel data
+2018-10-23 22:50:17 DEBUG Log:171 - Typing new hotel name by value: Hotel
+2018-10-23 22:50:17 DEBUG Log:178 - Typing new hotel date of construction by value: 01.01.2001
+2018-10-23 22:50:17 DEBUG Log:194 - Selecting new hotel country by value: Select one
+2018-10-23 22:50:17 DEBUG Log:225 - Typing new hotel short description by value: Short description
+2018-10-23 22:50:18 DEBUG Log:232 - Typing new hotel description by value: Long description
+2018-10-23 22:50:18 DEBUG Log:239 - Typing new hotel notes by value: Some notes
+2018-10-23 22:50:18 DEBUG Log:208 - Selecting new hotel city by value: Chester
+2018-10-23 22:50:19 DEBUG Log:318 - Getting int number from string by value: 4
+2018-10-23 22:50:19 DEBUG Log:187 - Selecting new hotel rating by value: 4
+2018-10-23 22:50:19 DEBUG Log:246 - Clicking save hotel button
+2018-10-23 22:50:20 DEBUG Log:164 - Getting error message detail text
+2018-10-23 22:50:20 DEBUG Log:61 - Checking that actual result ('Country: Validation Error: Value is required.') contains ('Country: Validation Error: Value is required.')
+2018-10-23 22:50:20 DEBUG Log:35 - Test set up
+2018-10-23 22:50:20 DEBUG Log:32 - Moving cursor to article menu
+2018-10-23 22:50:20 DEBUG Log:39 - Moving cursor to new menu
+2018-10-23 22:50:20 DEBUG Log:46 - Clicking on hotel menu
+2018-10-23 22:50:21 DEBUG Log:296 - Sending new hotel data
+2018-10-23 22:50:21 DEBUG Log:305 - Filling new hotel data
+2018-10-23 22:50:21 DEBUG Log:171 - Typing new hotel name by value: Hotel
+2018-10-23 22:50:22 DEBUG Log:178 - Typing new hotel date of construction by value: 01.01.2001
+2018-10-23 22:50:22 DEBUG Log:194 - Selecting new hotel country by value: UK
+2018-10-23 22:50:22 DEBUG Log:225 - Typing new hotel short description by value: Short description
+2018-10-23 22:50:22 DEBUG Log:232 - Typing new hotel description by value: Long description
+2018-10-23 22:50:22 DEBUG Log:239 - Typing new hotel notes by value: Some notes
+2018-10-23 22:50:22 DEBUG Log:208 - Selecting new hotel city by value: Select one
+2018-10-23 22:50:23 DEBUG Log:318 - Getting int number from string by value: 4
+2018-10-23 22:50:23 DEBUG Log:187 - Selecting new hotel rating by value: 4
+2018-10-23 22:50:23 DEBUG Log:246 - Clicking save hotel button
+2018-10-23 22:50:24 DEBUG Log:164 - Getting error message detail text
+2018-10-23 22:50:25 DEBUG Log:61 - Checking that actual result ('City: Validation Error: Value is required.') contains ('City: Validation Error: Value is required.')
+2018-10-23 22:50:25 DEBUG Log:35 - Test set up
+2018-10-23 22:50:25 DEBUG Log:32 - Moving cursor to article menu
+2018-10-23 22:50:25 DEBUG Log:39 - Moving cursor to new menu
+2018-10-23 22:50:25 DEBUG Log:46 - Clicking on hotel menu
+2018-10-23 22:50:26 DEBUG Log:296 - Sending new hotel data
+2018-10-23 22:50:26 DEBUG Log:305 - Filling new hotel data
+2018-10-23 22:50:26 DEBUG Log:171 - Typing new hotel name by value: Hotel
+2018-10-23 22:50:26 DEBUG Log:178 - Typing new hotel date of construction by value: 01.01.2001
+2018-10-23 22:50:26 DEBUG Log:194 - Selecting new hotel country by value: UK
+2018-10-23 22:50:26 DEBUG Log:225 - Typing new hotel short description by value: 
+2018-10-23 22:50:26 DEBUG Log:232 - Typing new hotel description by value: Long description
+2018-10-23 22:50:26 DEBUG Log:239 - Typing new hotel notes by value: Some notes
+2018-10-23 22:50:26 DEBUG Log:208 - Selecting new hotel city by value: Chester
+2018-10-23 22:50:28 DEBUG Log:318 - Getting int number from string by value: 4
+2018-10-23 22:50:28 DEBUG Log:187 - Selecting new hotel rating by value: 4
+2018-10-23 22:50:28 DEBUG Log:246 - Clicking save hotel button
+2018-10-23 22:50:29 DEBUG Log:164 - Getting error message detail text
+2018-10-23 22:50:29 DEBUG Log:61 - Checking that actual result ('Short Description: Validation Error: Value is required.') contains ('Short Description: Validation Error: Value is required.')
+2018-10-23 22:50:29 DEBUG Log:35 - Test set up
+2018-10-23 22:50:29 DEBUG Log:32 - Moving cursor to article menu
+2018-10-23 22:50:29 DEBUG Log:39 - Moving cursor to new menu
+2018-10-23 22:50:29 DEBUG Log:46 - Clicking on hotel menu
+2018-10-23 22:50:30 DEBUG Log:296 - Sending new hotel data
+2018-10-23 22:50:30 DEBUG Log:305 - Filling new hotel data
+2018-10-23 22:50:30 DEBUG Log:171 - Typing new hotel name by value: Hotel
+2018-10-23 22:50:30 DEBUG Log:178 - Typing new hotel date of construction by value: 01.01.2001
+2018-10-23 22:50:31 DEBUG Log:194 - Selecting new hotel country by value: UK
+2018-10-23 22:50:31 DEBUG Log:225 - Typing new hotel short description by value: Short description
+2018-10-23 22:50:31 DEBUG Log:232 - Typing new hotel description by value: 
+2018-10-23 22:50:31 DEBUG Log:239 - Typing new hotel notes by value: Some notes
+2018-10-23 22:50:31 DEBUG Log:208 - Selecting new hotel city by value: Chester
+2018-10-23 22:50:32 DEBUG Log:318 - Getting int number from string by value: 4
+2018-10-23 22:50:32 DEBUG Log:187 - Selecting new hotel rating by value: 4
+2018-10-23 22:50:33 DEBUG Log:246 - Clicking save hotel button
+2018-10-23 22:50:33 DEBUG Log:164 - Getting error message detail text
+2018-10-23 22:50:33 DEBUG Log:61 - Checking that actual result ('Description: Validation Error: Value is required.') contains ('Description: Validation Error: Value is required.')
+2018-10-23 22:50:33 DEBUG Log:51 - Test tear down general
+[INFO] Tests run: 34, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 99.448 s - in TestSuite
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 34, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[JENKINS] Recording test results
+[WARNING] Attempt to (de-)serialize anonymous class hudson.maven.reporters.SurefireArchiver$2; see: https://jenkins.io/redirect/serialization-of-anonymous-classes/
+[WARNING] Attempt to (de-)serialize anonymous class hudson.maven.reporters.BuildInfoRecorder$1; see: https://jenkins.io/redirect/serialization-of-anonymous-classes/
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ WildflyTesting ---
+[INFO] Building jar: C:\Program Files\Jenkins\workspace\WildflyTesting\target\WildflyTesting-1.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ WildflyTesting ---
+[INFO] Installing C:\Program Files\Jenkins\workspace\WildflyTesting\target\WildflyTesting-1.0-SNAPSHOT.jar to C:\Windows\system32\config\systemprofile\.m2\repository\Denakh\WildflyTesting\1.0-SNAPSHOT\WildflyTesting-1.0-SNAPSHOT.jar
+[INFO] Installing C:\Program Files\Jenkins\workspace\WildflyTesting\pom.xml to C:\Windows\system32\config\systemprofile\.m2\repository\Denakh\WildflyTesting\1.0-SNAPSHOT\WildflyTesting-1.0-SNAPSHOT.pom
+[WARNING] Attempt to (de-)serialize anonymous class hudson.maven.reporters.MavenArtifactArchiver$2; see: https://jenkins.io/redirect/serialization-of-anonymous-classes/
+[WARNING] Attempt to (de-)serialize anonymous class hudson.maven.reporters.MavenFingerprinter$1; see: https://jenkins.io/redirect/serialization-of-anonymous-classes/
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 02:01 min
+[INFO] Finished at: 2018-10-23T22:50:53+02:00
+[INFO] ------------------------------------------------------------------------
+Ожидаю пока Jenkins закончит сбор данных
+[JENKINS] Archiving C:\Program Files\Jenkins\workspace\WildflyTesting\pom.xml to Denakh/WildflyTesting/1.0-SNAPSHOT/WildflyTesting-1.0-SNAPSHOT.pom
+[JENKINS] Archiving C:\Program Files\Jenkins\workspace\WildflyTesting\target\WildflyTesting-1.0-SNAPSHOT.jar to Denakh/WildflyTesting/1.0-SNAPSHOT/WildflyTesting-1.0-SNAPSHOT.jar
+channel stopped
+Finished: SUCCESS
